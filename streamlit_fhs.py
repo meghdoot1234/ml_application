@@ -12,13 +12,13 @@ import pandas as pd
 # In[3]:
 
 
-st.write("# 10 Year Heart Disease Prediction")
+st.write("# Heart Disease Prediction APP by Dr. Meghdoot Ghosh")
 male = st.selectbox("Enter your gender",["Male", "Female"])
 col1, col2, col3 = st.columns(3)
 
 # getting user inputgender = col1.selectbox("Enter your gender",["Male", "Female"])
 
-age = col2.number_input("Enter your age")
+age = col2.number_input("Your age please")
 education = col3.selectbox("Highest academic qualification",["High school diploma", "Undergraduate degree", "Postgraduate degree", "PhD"])
 
 isSmoker = col1.selectbox("Are you currently a smoker?",["Yes","No"])
@@ -52,7 +52,7 @@ glucose = col3.number_input("Enter your glucose level")
 #st.button('Predict', key = "predict")
 
 
-# In[5]:
+# In[ ]:
 
 
 df_pred = pd.DataFrame([[male,age,education,isSmoker,yearsSmoking,BPMeds,stroke,hyp,diabetes,chol,sys_bp,dia_bp,bmi,heart_rate,glucose]],
@@ -82,14 +82,14 @@ def transform(data):
 df_pred['education'] = df_pred['education'].apply(transform)
 
 
-# In[6]:
+# In[ ]:
 
 
 model = joblib.load('fhs_rf_model.pkl')
 prediction = model.predict(df_pred)
 
 
-# In[7]:
+# In[ ]:
 
 
 if st.button('Predict'):
