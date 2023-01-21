@@ -46,10 +46,10 @@ heart_rate = col2.number_input("Enter your resting heart rate")
 glucose = col3.number_input("Enter your glucose level")
 
 
-# In[4]:
+# In[1]:
 
 
-st.button('Predict', key = "predict")
+#st.button('Predict', key = "predict")
 
 
 # In[5]:
